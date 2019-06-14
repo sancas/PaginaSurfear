@@ -141,7 +141,13 @@ h5 {
  transform: translate(-50%, -50%);
  width: 100%;
 }
+/* Portrait phones and smaller */
+@media (max-width: 989px) {
+  #fondo1 {
+    background-image: none;
+  }
 
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
