@@ -119,22 +119,9 @@ textarea {
   padding-bottom: 48.46%;
   height: 0;
 }
-/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
-.btn-playas {
-    color: #9BA4AA;
-    background-color: #fff;
-    border-color: #9BA4AA; /*set the color you want here*/
-}
-.btn-playas:hover, .btn-playas:focus, .btn-playas:active, .btn-playas.active, .open>.dropdown-toggle.btn-playas {
-    color: #9BA4AA;
-    background-color: #2CB2A9;
-    border-color: #285e8e; /*set the color you want here*/
-}
-
 h5 {
   color: #2CB2A9;
 }
-
 /* Main container */
 .overlay-image {
  position: relative;
