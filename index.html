@@ -16,89 +16,164 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="fonts/fuentes.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <style type="text/css">
+    @media (min-width: 992px) {
+      /* show 3 items */
+      .carousel-inner .active,
+      .carousel-inner .active + .carousel-item,
+      .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+      }
+
+      .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+      .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+      .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+      }
+
+      .carousel-inner .carousel-item-next,
+      .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+      }
+
+      /* left or forward direction */
+      .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+      .carousel-item-next.carousel-item-left + .carousel-item,
+      .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+      .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+      }
+
+      /* farthest right hidden item must be abso position for animations */
+      .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+      }
+
+      /* right or prev direction */
+      .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+      .carousel-item-prev.carousel-item-right + .carousel-item,
+      .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+      .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+      }
+    }
+
+    .carousel-item { margin-right: auto !important; }
+  </style>
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body id="bodyInicio">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
-  <div id="fondo1">
-    <div class="container">
-      <nav class="navbar navbar-light navbar-expand-lg justify-content-between font-weight-bold">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="dual-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
-            <ul class="navbar-nav">
-              <li class="nav-item"><span class="mx-3">Inicio</span><span class="mx-3">x</span></li>
-              <li class="nav-item"><span class="mx-3">Surfea<span class="mx-3">x</span></li>
-              <li class="nav-item"><span class="mx-3">Tienda</span></li>
-            </ul>
-          </div>
-          <a href="#" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25"><img src="img/Imagenes-02.png" class="img-fluid"></a>
-          <div class="navbar-collapse collapse dual-nav w-50 order-2">
-            <ul style="align-items: center;" class="nav navbar-nav ml-auto">
-              <li class="nav-item"><span class="mx-3">Eventos</span><span class="mx-3">x</span></li>
-              <li class="nav-item"><input style="max-width: 140px;" type="text" class="mx-1 form-control fas" placeholder="Busca playas &#xF002;"></li>
-              <li class="nav-item"><img class="mx-1" style="max-height: 50px;" src="img/Imagenes-03.png"></li>
-            </ul>
-          </div>
+  <div class="container">
+    <nav class="navbar navbar-light navbar-expand-lg justify-content-between font-weight-bold">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="dual-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html"><span class="mx-3">Inicio</span><span class="mx-3">x</span></a></li>
+            <li class="nav-item"><a href="detalle.html"><span class="mx-3">Surfea</span><span class="mx-3">x</span></a></li>
+            <li class="nav-item"><a href="tienda.html"><span class="mx-3">Tienda</span></a></li>
+          </ul>
         </div>
-      </nav>
-      <br />
-      <div class="row text-center font-weight-bold">
-        <div class="col">
-          <p class="my-0">Surfea en las mejores playas de la Libertad, El Salvador.</p>
-          <img src="img/Imagenes-04.png" align="center" width="90px">
+        <a href="#" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25"><img src="img/Imagenes-02.png" class="img-fluid"></a>
+        <div class="navbar-collapse collapse dual-nav w-50 order-2">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><span style="min-height: 100%;vertical-align: middle;display: inline-block;"></span><a href="tienda.html"><span class="mx-3">Eventos</span><span class="mx-3">x</span></a></li>
+            <li class="nav-item"><span style="min-height: 100%;vertical-align: middle;display: inline-block;"></span><input style="max-width: 140px;" type="text" class="mx-1 form-control fas" placeholder="Busca playas &#xF002;"></li>
+            <li class="nav-item"><img class="mx-1" style="max-height: 50px;" src="img/Imagenes-03.png"></li>
+          </ul>
         </div>
       </div>
-      <br />
-      <div class="row justify-content-md-center">
-        <div class="col-sm-auto">
-          <button type="button" class="btn btn-sm btn-outline-info">El zonte</button>
-          <button type="button" class="btn btn-sm btn-outline-info">Las flores</button>
-          <button type="button" class="btn btn-sm btn-outline-info">San blas</button>
-          <button type="button" class="btn btn-sm btn-outline-info">El tunco</button>
-          <button type="button" class="btn btn-sm btn-outline-info">El tamanique</button>
-          <button type="button" class="btn btn-sm btn-outline-info">Punta roca</button>
-        </div>
-      </div>        
-      <br />
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="img/Imagenes-07.jpg" width="268px" height="180" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><a href="detalle.html" style="color:#2CB2A9;">Hotel palo verde</a></h5>
-              <p class="card-text" style="color:#9BA4AA;">Zonte, la Libertad</p>
-              <img class="img-fluid" src="img/Imagenes-05.png">
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <br />
+    <div class="row text-center font-weight-bold">
+      <div class="col">
+        <p class="my-0">Surfea en las mejores playas de la Libertad, El Salvador.</p>
+        <img src="img/Imagenes-04.png" align="center" width="90px">
+      </div>
+    </div>
+    <br />
+    <div class="row justify-content-sm-center">
+      <div class="col-sm-auto">
+        <button type="button" class="btn btn-sm btn-outline-info">El zonte</button>
+        <button type="button" class="btn btn-sm btn-outline-info">Las flores</button>
+        <button type="button" class="btn btn-sm btn-outline-info">San blas</button>
+        <button type="button" class="btn btn-sm btn-outline-info">El tunco</button>
+        <button type="button" class="btn btn-sm btn-outline-info">El tamanique</button>
+        <button type="button" class="btn btn-sm btn-outline-info">Punta roca</button>
+      </div>
+    </div>
+    <br />
+    <div id="carouselInicial" class="carouselPrograms carousel slide" data-ride="carousel" data-interval="false">
+      <div class="container">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+          <div class="carousel-item col-lg-4 active">
+            <div class="card">
+              <img class="card-img-top" src="img/Imagenes-07.jpg" width="268px" height="180px" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><a href="detalle.html" style="color:#2CB2A9;">Hotel palo verde</a></h5>
+                <p class="card-text" style="color:#9BA4AA;">Zonte, la Libertad</p>
+                <img class="img-fluid" width="150px" src="img/Imagenes-05.png">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="img/Imagenes-08.jpg" width="268px" height="180" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><a href="detalle.html" style="color:#2CB2A9;">Puro surf</a></h5>
-              <p class="card-text" style="color:#9BA4AA;">Zonte, la Libertad</p>
-              <img class="img-fluid" src="img/Imagenes-06.png">
+          <div class="carousel-item col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="img/Imagenes-08.jpg" width="268px" height="180px" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><a href="detalle.html" style="color:#2CB2A9;">Puro surf</a></h5>
+                <p class="card-text" style="color:#9BA4AA;">Zonte, la Libertad</p>
+                <img class="img-fluid" width="150px" src="img/Imagenes-06.png">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="img/Imagenes-09.jpg" width="268px" height="180" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><a href="detalle.html" style="color:#2CB2A9;">Horizontes</a></h5>
-              <p class="card-text" style="color:#9BA4AA;">Zonte, la Libertad</p>
-              <img class="img-fluid" src="img/Imagenes-05.png">
+          <div class="carousel-item col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="img/Imagenes-09.jpg" width="268px" height="180px" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><a href="detalle.html" style="color:#2CB2A9;">Horizontes</a></h5>
+                <p class="card-text" style="color:#9BA4AA;">Zonte, la Libertad</p>
+                <img class="img-fluid" width="150px" src="img/Imagenes-05.png">
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <a class="carousel-control-prev" href="#carouselInicial" role="button" data-slide="prev">
+        <img src="img/left-arrow.png">
+      </a>
+      <a class="carousel-control-next text-faded" href="#carouselInicial" role="button" data-slide="next">
+        <img src="img/right-arrow.png">
+      </a>
     </div>
   </div>
 
